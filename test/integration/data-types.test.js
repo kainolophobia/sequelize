@@ -446,11 +446,11 @@ describe(Support.getTestDialectTeaser('DataTypes'), function() {
 
     return Model.sync({ force: true})
       .then(() => Model.create({ stamp: testDate }))
-      .then((record) => {
+      .then(record => {
         expect(typeof record.stamp).to.be.eql('string');
         expect(record.stamp).to.be.eql(testDate);
         return Model.findById(record.id);
-      }).then((record) => {
+      }).then(record => {
         expect(typeof record.stamp).to.be.eql('string');
         expect(record.stamp).to.be.eql(testDate);
       });
